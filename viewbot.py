@@ -106,19 +106,23 @@ def title_loop():
             os.system(f'title TikTok Viewbot by @xtekky ^| success: {success} fails: {fails} reqs: {reqs} rps: {rps} rpm: {rpm}')
             time.sleep(0.1)
 
-if __name__ == "__main__":
-    def start_bot():
+def start_bot():
     os.system("cls" if os.name == "nt" else "clear")
     os.system("title TikTok Viewbot by @xtekky" if os.name == "nt" else "")
-    
-    txt = """\n\n╦  ╦╦╔═╗╦ ╦╔╗ ╔═╗╔╦╗\n╚╗╔╝║║╣ ║║║╠╩╗║ ║ ║ \n ╚╝ ╩╚═╝╚╩╝╚═╝╚═╝ ╩ \n"""
-    
+
+    txt = """\n\n╦  ╦╦╔═╗╦ ╦╔╗ ╔═╗╔╦╗
+╚╗╔╝║║╣ ║║║╠╩╗║ ║ ║ 
+ ╚╝ ╩╚═╝╚╩╝╚═╝╚═╝ ╩ 
+"""
+
     print(
         Colorate.Vertical(
             Colors.DynamicMIX((Col.light_blue, Col.purple)),
             Center.XCenter(txt)
         )
     )
+
+    # resto do código aqui também indentado
 
     # continua o resto do seu código aqui
     
