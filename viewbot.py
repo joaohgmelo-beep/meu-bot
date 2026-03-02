@@ -107,13 +107,20 @@ def title_loop():
             time.sleep(0.1)
 
 if __name__ == "__main__":
-    os.system("cls" if os.name == "nt" else "clear"); os.system("title TikTok Viewbot by @xtekky" if os.name == "nt" else "")
+    def start_bot():
+    os.system("cls" if os.name == "nt" else "clear")
+    os.system("title TikTok Viewbot by @xtekky" if os.name == "nt" else "")
+    
     txt = """\n\n╦  ╦╦╔═╗╦ ╦╔╗ ╔═╗╔╦╗\n╚╗╔╝║║╣ ║║║╠╩╗║ ║ ║ \n ╚╝ ╩╚═╝╚╩╝╚═╝╚═╝ ╩ \n"""
+    
     print(
         Colorate.Vertical(
-            Colors.DynamicMIX((Col.light_blue, Col.purple)), Center.XCenter(txt)
+            Colors.DynamicMIX((Col.light_blue, Col.purple)),
+            Center.XCenter(txt)
         )
     )
+
+    # continua o resto do seu código aqui
     
     try:
         link = os.getenv("VIDEO_LINK")
@@ -160,8 +167,12 @@ if __name__ == "__main__":
             did, iid, cdid, openudid = device.split(':')
             eval(base64.b64decode('dGhyZWFkaW5nLlRocmVhZCh0YXJnZXQ9c2VuZCxhcmdzPVtkaWQsaWlkLGNkaWQsb3BlbnVkaWRdKS5zdGFydCgp'))
 
+import threading
 from flask import Flask
 import os
+
+# inicia o bot em thread
+threading.Thread(target=start_bot).start()
 
 app = Flask(__name__)
 
@@ -172,7 +183,3 @@ def home():
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 10000))
     app.run(host="0.0.0.0", port=port)
-    port = int(os.environ.get("PORT", 10000))
-    app.run(host="0.0.0.0", port=port)
-
-threading.Thread(target=run_flask).start()
