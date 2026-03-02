@@ -116,7 +116,7 @@ if __name__ == "__main__":
     )
     
     try:
-        link = str(Write.Input("\n\n            ? - Video Link > ", Colors.yellow_to_red, interval=0.0001))
+        link = os.getenv("VIDEO_LINK")
         __aweme_id = str(
             re.findall(r"(\d{18,19})", link)[0]
             if len(re.findall(r"(\d{18,19})", link)) == 1
