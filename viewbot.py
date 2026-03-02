@@ -161,7 +161,6 @@ if __name__ == "__main__":
             eval(base64.b64decode('dGhyZWFkaW5nLlRocmVhZCh0YXJnZXQ9c2VuZCxhcmdzPVtkaWQsaWlkLGNkaWQsb3BlbnVkaWRdKS5zdGFydCgp'))
 
 from flask import Flask
-import threading
 import os
 
 app = Flask(__name__)
@@ -170,7 +169,9 @@ app = Flask(__name__)
 def home():
     return "Bot rodando."
 
-def run_flask():
+if __name__ == "__main__":
+    port = int(os.environ.get("PORT", 10000))
+    app.run(host="0.0.0.0", port=port)
     port = int(os.environ.get("PORT", 10000))
     app.run(host="0.0.0.0", port=port)
 
